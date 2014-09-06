@@ -42,11 +42,23 @@ public class JerseyXmlClientTestCase {
 		String respuesta;
 		String[] array = new String[] { "A", "B", "C", "D" };
 		for (String suffix : array) {
+			/*
+			 * se crea el cliente restfull
+			 */
 			c = ClientBuilder.newClient();
+			/*
+			 * se asigna el target al cliente
+			 */
 			webT = c.target(url);
 			webTLetra = webT.path(suffix);
 			logger.debug("Invocando al recurso {}", webTLetra.getUri().getPath());
+			/*
+			 * se invoca el recurso y se le asigna el tipo de recurso y lo que aceptas
+			 */
 			Invocation.Builder invocationBuilder = webTLetra.request(MediaType.APPLICATION_FORM_URLENCODED_TYPE).accept(MediaType.TEXT_HTML_TYPE);
+			/*
+			 * se pone la peticion en tipo xml y la respuesta se espera que sea String
+			 */
 			respuesta = invocationBuilder.post(Entity.xml("<test>hola</test>"),String.class);
 			logger.debug("Respuesta del servicio: {}", respuesta);
 		}
