@@ -38,6 +38,9 @@ public class JAXBResource {
 	 * @return
 	 */
 	@GET
+	/*
+	 * para pasar los datos a xml
+	 */
 	@Produces(MediaType.APPLICATION_XML)
 	public Planeta getDatosPlaneta() {
 		Planeta planeta;
@@ -53,6 +56,9 @@ public class JAXBResource {
 	 * @param p
 	 */
 	@POST
+	/*
+	 * los datos enviados pasar a xml
+	 */
 	@Consumes(MediaType.APPLICATION_XML)
 	public void creaPlaneta(Planeta p) {
 
