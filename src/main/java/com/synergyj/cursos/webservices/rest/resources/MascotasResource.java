@@ -57,6 +57,8 @@ public class MascotasResource {
 		// file.
 		mimeType = new MimetypesFileTypeMap().getContentType(file);
 		logger.debug("MimeType {}", mimeType);
-		return Response.ok(file, mimeType).build();
+		//si el cliente puede interpretar la informacion la pitna 
+		//return Response.ok(file, mimeType).build();
+		return Response.ok(file, "image/jpg").build();
 	}
 }
