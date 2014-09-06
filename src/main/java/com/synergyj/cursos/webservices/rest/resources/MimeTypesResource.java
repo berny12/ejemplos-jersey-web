@@ -35,6 +35,7 @@ public class MimeTypesResource {
 	 * @return
 	 */
 	@GET
+	//para ver si se puede recibir varios salidas, en el accept, esto se hace la peticion en el cliente
 	@Produces({ "application/xml", "application/json" })
 	public String getMensajeAsHtmlJson() {
 
