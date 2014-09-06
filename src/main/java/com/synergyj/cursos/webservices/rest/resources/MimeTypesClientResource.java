@@ -22,7 +22,11 @@ import org.slf4j.LoggerFactory;
  * @author Jorge Rodríguez Campos (jorge.rodriguez@synergyj.com)
  * @version 1.0
  */
-@Path("/clientMimeType/{mensaje}")
+/*
+ * para agregar otro mensaje
+ */
+//@Path("/clientMimeType/{mensaje}")
+@Path("/clientMimeType/{mensaje}/{otromensaje}")
 public class MimeTypesClientResource {
 
 	/**
@@ -33,8 +37,10 @@ public class MimeTypesClientResource {
 
 	@Consumes("text/html")
 	@GET
-	public String procesaInfo(@PathParam("mensaje") String mensaje) {
+	public String procesaInfo(@PathParam("mensaje") String mensaje,
+			@PathParam("otromensaje") String otromensaje) {
 		logger.debug("Mensaje recibido {}", mensaje);
+		logger.debug("otroMensaje recibido {}", otromensaje);
 		return "OK, info "+mensaje+" procesada";
 	}
 }

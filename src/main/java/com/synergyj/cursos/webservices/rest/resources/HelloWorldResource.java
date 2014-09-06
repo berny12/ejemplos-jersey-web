@@ -10,6 +10,7 @@
 package com.synergyj.cursos.webservices.rest.resources;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -33,7 +34,9 @@ public class HelloWorldResource {
 	 * Metodo que obtiene una cadena de texto como resultado de una peticion GET
 	 * @return
 	 */
+	//como procesar la peticion del serivicio
 	@GET
+	//@POST
 	@Produces(value = "text/plain")
 	public String getSaludo() {
 		logger.debug("invocando recurso WEB formato texto.");
