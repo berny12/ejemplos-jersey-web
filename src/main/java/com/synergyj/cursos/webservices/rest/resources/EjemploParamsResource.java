@@ -42,6 +42,7 @@ public class EjemploParamsResource {
 	 */
 	@GET
 	@Produces("text/html")
+	//para convertir y cachar los parametros del request y los metio en prametros del metodo ljava
 	public String obtenParametros(
 			@DefaultValue("sin sucursal") @QueryParam("sucursal") String sucursal,
 			@DefaultValue("true") @QueryParam("clientePreferente") boolean clientePreferente,
